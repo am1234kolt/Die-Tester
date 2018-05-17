@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressBar?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8.0.121" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+    <AnchorPane prefHeight="563.0" prefWidth="1132.0">
+      <children>
+         <Button fx:id="sixFace" layoutX="42.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleSixFace" prefHeight="81.0" prefWidth="81.0" />
+         <Button fx:id="twelveFace" layoutX="187.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleTwelveFace" prefHeight="81.0" prefWidth="81.0" />
+         <Button fx:id="twentyFace" layoutX="325.0" layoutY="42.0" mnemonicParsing="false" onAction="#handleTwentyFace" prefHeight="81.0" prefWidth="81.0" />
+         <Label fx:id="labelChoice" layoutX="170.0" layoutY="176.0" prefHeight="17.0" prefWidth="143.0" />
+         <ImageView fx:id="displayChoice" fitHeight="119.0" fitWidth="120.0" layoutX="181.0" layoutY="222.0" pickOnBounds="true" preserveRatio="true" />
+         <Slider fx:id="timeSlider" layoutX="135.0" layoutY="375.0" max="2000" min="50" onContextMenuRequested="#handleSliderTimer" onMouseClicked="#handleSliderTimer" onMouseDragged="#handleSliderTimer" onMouseEntered="#handleSliderTimer" onMouseExited="#handleSliderTimer" onMouseMoved="#handleSliderTimer" onMousePressed="#handleSliderTimer" onMouseReleased="#handleSliderTimer" prefHeight="17.0" prefWidth="201.0" value="50.0" />
+         <Label fx:id="timeDisplay" layoutX="344.0" layoutY="375.0" prefHeight="17.0" prefWidth="110.0">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Label>
+         <Label layoutX="54.0" layoutY="375.0" prefHeight="17.0" prefWidth="81.0" text="Delay Timer:">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Label>
+         <Button fx:id="startButton" layoutX="177.0" layoutY="462.0" mnemonicParsing="false" onAction="#handleStartButton" prefHeight="25.0" prefWidth="110.0" text="Start">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Button>
+         <Button fx:id="pauseButton" layoutX="177.0" layoutY="510.0" mnemonicParsing="false" onAction="#handlePauseButton" prefHeight="25.0" prefWidth="110.0" text="Pause">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font>
+         </Button>
+         <TabPane layoutX="510.0" layoutY="64.0" prefHeight="471.0" prefWidth="598.0" tabClosingPolicy="UNAVAILABLE">
+           <tabs>
+             <Tab text="Bar Chart">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <BarChart fx:id="barChart" layoutX="4.0" layoutY="9.0" prefHeight="425.0" prefWidth="590.0" title="Duplicating cases">
+                               <xAxis>
+                                   <CategoryAxis label="Face of the Dice" prefWidth="585.0" side="BOTTOM" fx:id="x" />
+                               </xAxis>
+                               <yAxis>
+                                   <NumberAxis fx:id="y" label="Duplicate Cases" side="LEFT" />
+                               </yAxis>
+                           </BarChart>
+                        </children>
+                     </AnchorPane>
+               </content>
+             </Tab>
+             <Tab text="Table View">
+               <content>
+                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                        <children>
+                           <TableView prefHeight="442.0" prefWidth="598.0">
+                             <columns>
+                                 <TableColumn fx:id="scoreColumn" prefWidth="276.0" text="Face" />
+                                 <TableColumn fx:id="casesColumn" prefWidth="321.0" text="Number Duplicate Cases" />
+                             </columns>
+                           </TableView>
+                        </children></AnchorPane>
+               </content>
+             </Tab>
+           </tabs>
+         </TabPane>
+         <ProgressBar fx:id="progressBar" layoutX="136.0" layoutY="415.0" prefHeight="0.0" prefWidth="200.0" progress="0.0" />
+         <Label fx:id="percentageLabel" layoutX="344.0" layoutY="416.0" prefHeight="17.0" prefWidth="67.0">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Label>
+         <Label layoutX="71.0" layoutY="416.0" text="Progress:">
+            <font>
+               <Font name="System Bold" size="12.0" />
+            </font></Label>
+      </children>
+    </AnchorPane>
+    <columnConstraints>
+        <ColumnConstraints />
+    </columnConstraints>
+    <rowConstraints>
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+        <RowConstraints />
+    </rowConstraints>
+</GridPane>
